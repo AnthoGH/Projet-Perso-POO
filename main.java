@@ -18,9 +18,6 @@ public class ProgObject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        
    
         System.out.println("Choisissez le nom de votre conducteur ? ");
         String varchoixC = "";
@@ -39,28 +36,33 @@ public class ProgObject {
         
         varchoix = choix.nextLine();
         if ("voiture".equals(varchoix)){
+            C1.setUnVehicule(Voiture);
             System.out.println(Voiture.uneVoiture());
         }
         else if ("moto".equals(varchoix)){
-        System.out.println(Moto.uneMoto());
+            C1.setUnVehicule(Moto);
+            System.out.println(Moto.uneMoto());
         }else{
             System.out.println("Je ne connais pas ce véhicule");
         }
         
-        System.out.println("Votre conducteur démarre, le véhicule roule à " + C1.getDemarrer() + "Km/h");
+        System.out.println("Votre conducteur démarre, le véhicule roule à " + C1.demarrer() + " Km/h");
         System.out.println("Voulez vous accelerer, freiner ou vous arreter ? Tappez 1, 2 ou 3");
         String varchoix2 = "";
         Scanner choix2 = new Scanner(System.in);
         
          varchoix2 = choix2.nextLine();
          if ("1".equals(varchoix2)){
-         System.out.println("Votre conducteur accelère, vous roulez maintenant à " + C1.getAccelerer() + " Km/h");
+             C1.accelerer();
+         System.out.println("Votre conducteur accelère, vous roulez maintenant à " + C1.getUnVehicule().getVitesse() + " Km/h");
         }
           else if ("2".equals(varchoix2)){
-        System.out.println("Votre conducteur freine, vous roulez maintenant à " + C1.getFreiner() + " Km/h");
+              C1.freiner();
+        System.out.println("Votre conducteur freine, vous roulez maintenant à " + C1.getUnVehicule().getVitesse() + " Km/h");
         }
           else if ("3".equals(varchoix2)){
-        System.out.println("Votre conducteur s'arrete, vous roulez maintenant à " + C1.getArret() + " Km/h");
+              C1.arret();
+        System.out.println("Votre conducteur s'arrete, vous roulez maintenant à " + C1.getUnVehicule().getVitesse() + " Km/h");
           }else{
             System.out.println("Action inconnue");
         }
