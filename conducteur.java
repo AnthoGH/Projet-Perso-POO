@@ -11,12 +11,9 @@ package progobject;
  */
 public class Conducteur {
     private String nomConducteur;
-    private int demarrer = 50;
-    private int accelerer = 100;
-    private int freiner = 20;
-    private int arret = 0;
+    private Vehicule unVehicule;
     
-    public void rencontrerFeu(Feu F, Vehicule V) {
+    /*public void rencontrerFeu(Feu F, Vehicule V) {
     if ( F.getCouleur().equals("Rouge")) {
         V.arreter();
     if ( F.getCouleur().equals("Orange")) {
@@ -26,7 +23,7 @@ public class Conducteur {
         V.avancer50();
     }
                               
-   }}
+   }}*/
     
     //Constructeur
     public Conducteur(String nomConducteur){
@@ -41,54 +38,28 @@ public class Conducteur {
         this.nomConducteur = nomConducteur;
     }
 
-    public int getFreiner() {
-        return freiner;
-    }
-
-    public void setFreiner(int freiner) {
-        this.freiner = freiner;
+    public int demarrer() {
+        return unVehicule.getVitesse();
     }
     
-    public int getAccelerer() {
-        return accelerer;
+     public void accelerer() {
+        unVehicule.setVitesse(100);
+    }
+     
+     public void freiner() {
+         unVehicule.setVitesse(20);
+     }
+     
+     public void arret () {
+         unVehicule.setVitesse(0);
+     }
+
+    public Vehicule getUnVehicule() {
+        return unVehicule;
     }
 
-    public void setAccelerer(int accelerer) {
-        this.accelerer = accelerer;
+    public void setUnVehicule(Vehicule unVehicule) {
+        this.unVehicule = unVehicule;
     }
-    
-    public void accelerer(Vehicule leVehicule) {
-        leVehicule.vitesseplus();
-    }
-    
-    public void accelerer50(Vehicule leVehicule) {
-    leVehicule.avancer50();
-    }
-    
-    public void freinermax(Vehicule leVehicule) {
-    leVehicule.arreter();
-    }
-
-    public void demarrer(Vehicule leVehicule) {
-        leVehicule.avancer50();
-    }
-    
-    public int getDemarrer() {
-        return demarrer;
-    }
-
-    public void setDemarrer(int demarrer) {
-        this.demarrer = demarrer;
-    }
-
-    public int getArret() {
-        return arret;
-    }
-
-    public void setArret(int arret) {
-        this.arret = arret;
-    }
-
-    
     
 }
