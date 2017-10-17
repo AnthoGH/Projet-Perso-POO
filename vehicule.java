@@ -10,13 +10,10 @@ package progobject;
  * @author Antho
  */
 public class Vehicule {
-   protected String nomVehicule;
-   protected String modelVehicule;
-   protected String ressource;
-   private int nbrRoue;
-   private int nbrSiege;
+   private String nomVehicule;
+   private String modelVehicule;
+   private String ressource;
    private int vitesse = 50;
-   private int vitessepointe;
    
    public Vehicule (String nomVehicule, String modelVehicule, String ressource) {
        this.nomVehicule = nomVehicule;
@@ -24,29 +21,14 @@ public class Vehicule {
        this.ressource = ressource;
    }
    
-
-    public int getVitessepointe() {
-        return vitessepointe;
-    }
-
+   
+   
     public String getRessource() {
         return ressource;
     }
 
-    public int getNbrRoue() {
-        return nbrRoue;
-    }
-
-    public void setNbrRoue(int nbrRoue) {
-        this.nbrRoue = nbrRoue;
-    }
-
     public void setRessource(String ressource) {
         this.ressource = ressource;
-    }
-
-    public void setVitessepointe(int vitessepointe) {
-        this.vitessepointe = vitessepointe;
     }
 
     public int getVitesse() {
@@ -65,32 +47,12 @@ public class Vehicule {
         this.modelVehicule = modelVehicule;
     }
 
-    public void setNbrSiege(int nbrSiege) {
-        this.nbrSiege = nbrSiege;
-    }
-
     public String getNomVehicule() {
         return nomVehicule;
     }
 
     public String getModelVehicule() {
         return modelVehicule;
-    }
-
-    public int getNbrSiege() {
-        return nbrSiege;
-    }
-    
-    public void vitesseplus() {
-    vitesse++;
-    }
-    
-    public void avancer50() {
-    vitesse=50;
-    }
-    
-    public void arreter() {
-    vitesse=0;
     }
     
     public String unVehicule(){
