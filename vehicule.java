@@ -56,7 +56,7 @@ public class Vehicule {
     }
     
     public String unVehicule(){
-        return "\t"+"Votre véhicule est une " +this.nomVehicule + " " +this.modelVehicule+" "+this.ressource + ".";
+        return "Votre véhicule est une " +this.nomVehicule + " " +this.modelVehicule+" "+this.ressource + ".";
                 }
 }
 
