@@ -13,17 +13,17 @@ public class Conducteur {
     private String nomConducteur;
     private Vehicule unVehicule;
     
-    /*public void rencontrerFeu(Feu F, Vehicule V) {
+    public void rencontrer(Feu F) {
     if ( F.getCouleur().equals("Rouge")) {
-        V.arreter();
+        arret();
     if ( F.getCouleur().equals("Orange")) {
-        V.arreter();
+        arret();
     }
     if ( F.getCouleur().equals("Vert")) {
-        V.avancer50();
+        demarrer();
     }
                               
-   }}*/
+   }}
     
     //Constructeur
     public Conducteur(String nomConducteur){
@@ -43,11 +43,11 @@ public class Conducteur {
     }
     
      public void accelerer() {
-        unVehicule.setVitesse(100);
+         unVehicule.setVitesse(unVehicule.getVitesse()+20);
     }
      
      public void freiner() {
-         unVehicule.setVitesse(20);
+         unVehicule.setVitesse(unVehicule.getVitesse()-20);
      }
      
      public void arret () {
